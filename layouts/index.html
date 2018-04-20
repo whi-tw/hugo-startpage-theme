@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+    <head>
+        <title> {{ .Site.Title }} </title>
+        {{ partial "head.html" . }}
+    </head>
+    <body class="mdl-base">
+        <div class="mdl-layout__container"></div>
+            <div class="mdl-layout mdl-js-layout mdl-color--grey-600">
+                {{ partial "header.html" . }}
+                <main class="mdl-layout__content">
+                    <div class="mdl-grid">
+                        {{ range .Site.Data.links }}
+                        <div class="mdl-card mdl-card mdl-shadow--6dp mdl-color--grey-300 mdl-cell mdl-cell--2-col mdl-cell--4-col-tablet mdl-cell--8-col-phone">
+                            <div class="mdl-card__title mdl-color--{{ .colour | default "blue" }}">
+                                <h4 class="mdl-card__title-text mdl-color-text--grey-50">{{ .name }}</h4>
+                            </div>
+                            {{ range .sections }}
+                            <div class="mdl-card__actions mdl-card--border mdl-color-text--grey-900">
+                                {{ range .links }}
+                                <a href="{{ .url }}" class="link mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">{{ .title }}</a>
+                                {{ end }}
+                            </div>
+                            {{ end }}
+                        </div>
+                        {{ end }}
+                    </div>
+                </main>
+                {{ partial "footer.html" . }}
+            </div>
+    </body>
+</html>
