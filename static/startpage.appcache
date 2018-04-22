@@ -1,0 +1,6 @@
+CACHE MANIFEST
+# startpage.appcache v1
+# this is my cache manifest 
+index.html
+css/styles-min.css
+css/font-roboto-min.css
