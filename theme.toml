@@ -3,10 +3,10 @@
 
 name = "Startpage"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE.md"
-description = ""
-homepage = "http://example.com/"
-tags = []
+licenselink = "https://github.com/tnwhitwell/hugo-startpage-theme/blob/master/LICENSE.md"
+description = "A simple Start Page theme based on MDL"
+homepage = "https://github.com/tnwhitwell/hugo-startpage-theme/"
+tags = ["speed-dial", "single-page"]
 features = []
 min_version = "0.38.1"
 
