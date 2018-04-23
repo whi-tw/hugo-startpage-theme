@@ -1,6 +1,6 @@
 # Startpage theme for hugo
 
-## Instructions:
+## Instructions
 Create data/links.yml in your site directory
 
 This file takes the following format:
@@ -24,3 +24,19 @@ This file takes the following format:
     - title: Al Jazeera
       url: https://www.aljazeera.com/
 ```
+
+## Offline Use
+
+The theme specifies and includes an appcache manifest for offline use.
+
+For content changes to be applied, this manifest must be updated on each build.
+
+Suggested way to get this updated is by running:
+
+```bash
+hugo
+CURRENT_REVISION=$(git rev-parse --short HEAD)
+sed -i "s/COMMIT_SHA/${CURRENT_REVISION}/" public/startpage.appcache
+```
+
+This will ensure that the manifest is updated on each build so the cache is rebuilt by the browser after building.
