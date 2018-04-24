@@ -15,3 +15,48 @@
   - links:
     - title: Al Jazeera
       url: https://www.aljazeera.com/
+- name: Cat Pictures
+  colour: purple
+  sections:
+  - links:
+    - title: Reddit r/cats
+      url: https://www.reddit.com/r/cats/
+    - title: Google images
+      url: https://www.google.co.uk/search?q=cat+pictures&source=lnms&tbm=isch&sa=X&ved=2ahUKEwimxtGlotPaAhXjJsAKHSyDCRMQ_AUoAXoECAAQAw&biw=1276&bih=1080
+- name: Development
+  colour: red
+  sections:
+  - links:
+    - title: GitHub
+      url: https://github.com/tnwhitwell
+    - title: GitLab
+      url: https://gitlab.whitwell.xyz
+    - title: Docker Hub
+      url: https://hub.docker.com/u/tnwhitwell/
+  - links:
+    - title: K8s Dashboard
+      url: http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/overview?namespace=default
+    - title: Grafana
+      url: https://example.com
+  - links:
+    - title: GAnalytics
+      url: https://analytics.google.com/analytics/web/#/
+- name: Media
+  colour: cyan
+  sections:
+  - links:
+    - title: Reddit
+      url: https://www.reddit.com
+    - title: The Register
+      url: https://www.theregister.co.uk/
+    - title: Hacker News
+      url: https://news.ycombinator.com/
+  - links:
+    - title: YouTube
+      url: https://www.youtube.com/feed/subscriptions
+    - title: Netflix
+      url: https://www.netflix.com/browse
+    - title: Netflix | History
+      url: https://www.netflix.com/viewingactivity
+    - title: Trakt.tv
+      url: https://trakt.tv/

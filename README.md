@@ -25,7 +25,7 @@ This file takes the following format:
       url: https://www.aljazeera.com/
 ```
 
-## Demo Site (using the above links.yml)
+## Demo Site (partially using the above links.yml)
 
 https://tnwhitwell.github.io/hugo-startpage-theme/
 
