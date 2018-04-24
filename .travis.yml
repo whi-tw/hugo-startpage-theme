@@ -9,14 +9,14 @@ script:
   - cp -a ../layouts themes/startpage/
   - cp -a ../static themes/startpage/
   - cp -a ../theme.toml themes/startpage/
-  - ../hugo
-  - sed -i 's/COMMIT_SHA/TRAVIS_COMMIT/' public/startpage.appcache
+  - ../hugo -b https://tnwhitwell.github.io/hugo-startpage-theme/
+  - sed -i "s/COMMIT_SHA/$TRAVIS_COMMIT/" public/startpage.appcache
   
 deploy:
   provider: pages
   skip-cleanup: true
   local_dir: exampleSite/public
   github-token: $GITHUB_TOKEN
-  keep-history: true
+  keep-history: false
   on:
     branch: master
