@@ -25,6 +25,10 @@ This file takes the following format:
       url: https://www.aljazeera.com/
 ```
 
+## Demo Site (using the above links.yml)
+
+https://tnwhitwell.github.io/hugo-startpage-theme/
+
 ## Offline Use
 
 The theme specifies and includes an appcache manifest for offline use.
