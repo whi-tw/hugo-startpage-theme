@@ -1,0 +1,22 @@
+install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.tar.gz
+  - tar xzf hugo_0.38.2_Linux-64bit.tar.gz hugo && chmod +x hugo
+
+script:
+  - cd exampleSite
+  - mkdir content
+  - mkdir -p themes/startpage
+  - cp -a ../layouts themes/startpage/
+  - cp -a ../static themes/startpage/
+  - cp -a ../theme.toml themes/startpage/
+  - ../hugo
+  - sed -i 's/COMMIT_SHA/TRAVIS_COMMIT/' public/startpage.appcache
+  
+deploy:
+  provider: pages
+  skip-cleanup: true
+  local_dir: exampleSite/public
+  github-token: $GITHUB_TOKEN
+  keep-history: true
+  on:
+    branch: master
