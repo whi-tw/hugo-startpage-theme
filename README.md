@@ -51,3 +51,6 @@ If the site is cached before you are ready, either:
 
 1. add a comment to the generated startpage.appcache (changing one character will work)
 2. Empty the cache on your browser, using [Andy Gup's instructions](http://www.andygup.net/deleting-an-html-application-cache/).
+
+## Acknowledgements
+@analbeard - for the theme idea and guidance
