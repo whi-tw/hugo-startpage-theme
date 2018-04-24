@@ -1,22 +1,23 @@
 install:
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.tar.gz
-  - tar xzf hugo_0.38.2_Linux-64bit.tar.gz hugo && chmod +x hugo
-
+- wget https://github.com/gohugoio/hugo/releases/download/v0.38.2/hugo_0.38.2_Linux-64bit.tar.gz
+- tar xzf hugo_0.38.2_Linux-64bit.tar.gz hugo && chmod +x hugo
 script:
-  - cd exampleSite
-  - mkdir content
-  - mkdir -p themes/startpage
-  - cp -a ../layouts themes/startpage/
-  - cp -a ../static themes/startpage/
-  - cp -a ../theme.toml themes/startpage/
-  - ../hugo -b https://tnwhitwell.github.io/hugo-startpage-theme/
-  - sed -i "s/COMMIT_SHA/$TRAVIS_COMMIT/" public/startpage.appcache
-  
+- cd exampleSite
+- mkdir content
+- mkdir -p themes/startpage
+- cp -a ../layouts themes/startpage/
+- cp -a ../static themes/startpage/
+- cp -a ../theme.toml themes/startpage/
+- "../hugo -b https://tnwhitwell.github.io/hugo-startpage-theme/"
+- sed -i "s/COMMIT_SHA/$TRAVIS_COMMIT/" public/startpage.appcache
 deploy:
   provider: pages
   skip-cleanup: true
   local_dir: exampleSite/public
-  github-token: $GITHUB_TOKEN
+  github-token: "$GITHUB_TOKEN"
   keep-history: false
   on:
     branch: master
+notifications:
+  slack:
+    secure: KDMY5RsF0AkzTVv7BNlWmkbyMZfegKt8c0/x8R10hHt8EO1FsZ6hkOYSMp5ZceyQHi+rWO8QpRtwVgYMR5cyFhRDUvewe7VFrB1NRxpwA8slLYAzkTDkUgzAl7oF94K1Q45E7+fX9Qs4X6k8rUSowxmCL9BquB4DyCkMYC2E/888mom1PdZ9wrasBJNzbMBKWcSm5AuByGqLH0PXuIREBne0IhYlVw3tZCtOuWWBOkam1Voxk1SeLbNj2W7ATBq78zPkXbK/UGFY2p038QskdSImiRHKiCfNf8PcdkJZAkxM3cd5tkGIvrJw7nrw7ZFax8QG7KFHWrhJQmseyTHz0TkOs26kK77+3s89GTse6rpDQjopen72rspNlBR16jbvhQL5BqhXUP/2KoVojGdK8YUk1EvURdDYbG6VLGG6Fj/DJHp6cRnJmBnyyqFuIrY6luTR+q8njFMWqLMXj4DpPAyFxGvbY8Kj6MC4t3/QOC1/OFP2/E1uSz6OSBLrKOF/q9LAudiP+XisI15zrWq2Ou3bdGlj7WVN8L00n/jEr/q8j0kbFAAD21RxCV6cFcTJ9Hvx35iiFc3niDj0FCC8wq/I5SSxsALoYv4UJ8DH4W20294i8JSd6N+IvUhaJSnffoJJVIqnodR6BEzDenMGF3wymqJYSe3aqaOj9rqEb6Y=
