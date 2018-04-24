@@ -6,7 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/tnwhitwell/hugo-startpage-theme/blob/master/LICENSE.md"
 description = "A simple Start Page theme based on MDL"
 homepage = "https://github.com/tnwhitwell/hugo-startpage-theme/"
-tags = ["speed-dial", "single-page"]
+tags = ["speed-dial", "single-page", "material-design", "responsive", "one-page"]
 features = []
 min_version = "0.38.1"
 
