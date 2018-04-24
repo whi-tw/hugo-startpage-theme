@@ -3,7 +3,6 @@ install:
 - tar xzf hugo_0.38.2_Linux-64bit.tar.gz hugo && chmod +x hugo
 script:
 - cd exampleSite
-- mkdir content
 - mkdir -p themes/startpage
 - cp -a ../layouts themes/startpage/
 - cp -a ../static themes/startpage/
