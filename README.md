@@ -26,17 +26,26 @@ This file takes the following format:
 
 ## Demo Site (partially using the above links.yml)
 
-https://tnwhitwell.github.io/hugo-startpage-theme/
+* [GitHub Pages (most recent build)](https://tnwhitwell.github.io/hugo-startpage-theme/)
+* [Hugo themes site (current release)](https://themes.gohugo.io/theme/hugo-startpage-theme/)
 
 ## Offline Use
 
-The theme specifies and includes an appcache manifest for offline use / quick launch.
+The theme includes an appcache manifest for offline use / quick launch.
 
-This is always included at the moment, but will be controllable / disableable via `config.toml` eventually.
+This is disabled by default, and can be enabled through the site parameters in `config.toml`:
 
-For content changes to be applied, this manifest ***must*** be updated on each build.
+```toml
+[params]
+    offline = true
+```
+If offline use is not desired or required, either omit the parameter (it is off by default) or set `offline = false`.
 
-Suggested way to get this updated is by running:
+### Usage notes for offline-mode
+
+For changes to your startpage to be applied after a build, this manifest ***must*** be modified on each build.
+
+If your site is in a git repo, the suggested way to get this updated is by running the following after each successful build:
 
 ```bash
 hugo
@@ -44,13 +53,14 @@ CURRENT_REVISION=$(git rev-parse --short HEAD)
 sed -i "s/COMMIT_SHA/${CURRENT_REVISION}/" public/startpage.appcache
 ```
 
-This will ensure that the manifest is updated on each build so the cache is rebuilt by the browser after building.
+This will ensure that the manifest will be re-read by the browser, and all content re-cached.
 
 ### Fixing a prematurely cached site
-If the site is cached before you are ready, either:
+If the site is cached before you are ready, the following will help:
 
-1. add a comment to the generated startpage.appcache (changing one character will work)
-2. Empty the cache on your browser, using [Andy Gup's instructions](http://www.andygup.net/deleting-an-html-application-cache/).
+1. Add a comment / modify the version string of the generated startpage.appcache (changing one character will work) and reload 
+2. Build the site with `offline = false` and refresh the page
+3. Empty the cache on your browser, using [Andy Gup's instructions](http://www.andygup.net/deleting-an-html-application-cache/).
 
 ## Acknowledgements
-@analbeard - for the theme idea and guidance
+[@analbeard](https://github.com/analbeard) - for the inspiration to create the theme and guidance

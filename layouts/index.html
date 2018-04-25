@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}" manifest="startpage.appcache">
+<html lang="{{ .Site.LanguageCode }}"{{ if and (isset .Site.Params "offline") ( .Site.Params.offline ) }} manifest="startpage.appcache"{{ end }}>
     <head>
         <title> {{ .Site.Title }} </title>
         {{ partial "head.html" . }}

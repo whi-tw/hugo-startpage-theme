@@ -2,3 +2,6 @@ baseURL = "https://example.org/"
 languageCode = "en-gb"
 title = "Start Page"
 theme = "startpage"
+
+[params]
+    offline = false
