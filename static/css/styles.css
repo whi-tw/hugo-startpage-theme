@@ -1,4 +1,9 @@
 .link {
     display: block !important;
     text-align: left !important;
+    overflow: visible;
+    height: auto !important;
+    min-height: 36px;
+    white-space: normal;
+    word-wrap: break-word;
 }
